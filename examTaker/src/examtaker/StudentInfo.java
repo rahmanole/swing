@@ -17,6 +17,15 @@ public class StudentInfo extends javax.swing.JFrame {
     public StudentInfo() {
         initComponents();
     }
+    
+    public StudentInfo(String name,String email,String studentId,String batchId,String round){
+        initComponents();
+        lbl_name.setText(name);
+        lbl_email.setText(email);
+        lbl_id.setText(studentId);
+        lbl_batch_id.setText(batchId);
+        lbl_round.setText(round);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -28,23 +37,38 @@ public class StudentInfo extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel4 = new javax.swing.JLabel();
+        jFrame1 = new javax.swing.JFrame();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        lbl_loglin = new javax.swing.JLabel();
+        pnl_createAccount = new javax.swing.JPanel();
+        lbl_create_acc = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        txtFild_email = new javax.swing.JTextField();
-        btn_login = new javax.swing.JButton();
-        txtFild_pass = new javax.swing.JPasswordField();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        btn_create_acc = new javax.swing.JButton();
-        btn_forgot_pas = new javax.swing.JButton();
-        lbl_login_msgs = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        lbl_name = new javax.swing.JLabel();
+        lbl_email = new javax.swing.JLabel();
+        lbl_id = new javax.swing.JLabel();
+        lbl_batch_id = new javax.swing.JLabel();
+        lbl_round = new javax.swing.JLabel();
 
         jLabel4.setText("jLabel4");
+
+        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
+        jFrame1.getContentPane().setLayout(jFrame1Layout);
+        jFrame1Layout.setHorizontalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jFrame1Layout.setVerticalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -67,9 +91,9 @@ public class StudentInfo extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addComponent(jLabel1)
-                .addGap(275, 275, 275)
+                .addGap(290, 290, 290)
                 .addComponent(jLabel2)
-                .addContainerGap(499, Short.MAX_VALUE))
+                .addContainerGap(484, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -85,124 +109,133 @@ public class StudentInfo extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(52, 73, 94));
 
-        jPanel4.setBackground(new java.awt.Color(52, 73, 94));
+        pnl_createAccount.setBackground(new java.awt.Color(52, 73, 94));
 
-        lbl_loglin.setBackground(new java.awt.Color(255, 255, 255));
-        lbl_loglin.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        lbl_loglin.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_loglin.setText("Log In");
+        lbl_create_acc.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_create_acc.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lbl_create_acc.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_create_acc.setText("Student Info");
 
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
+        jSeparator1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jSeparator1.setOpaque(true);
 
-        txtFild_email.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtFild_email.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtFild_email.setBorder(null);
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Name");
 
-        btn_login.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btn_login.setForeground(new java.awt.Color(255, 255, 255));
-        btn_login.setText("LogIn");
-        btn_login.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        btn_login.setContentAreaFilled(false);
-        btn_login.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_login.addActionListener(new java.awt.event.ActionListener() {
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Email");
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Student ID");
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Batch ID");
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Log In");
+        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        jButton1.setContentAreaFilled(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_loginActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
-        txtFild_pass.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtFild_pass.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtFild_pass.setBorder(null);
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Round");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/examtaker/image/icons8_User_32px.png"))); // NOI18N
+        lbl_name.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lbl_name.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_name.setText("Md. Minhazur Rahman");
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/examtaker/image/icons8_Password_32px.png"))); // NOI18N
+        lbl_email.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lbl_email.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_email.setText("rahmanole.bd@gmail.com");
 
-        btn_create_acc.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btn_create_acc.setForeground(new java.awt.Color(255, 255, 255));
-        btn_create_acc.setText("Create Account");
-        btn_create_acc.setBorder(null);
-        btn_create_acc.setContentAreaFilled(false);
-        btn_create_acc.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_create_acc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_create_accActionPerformed(evt);
-            }
-        });
+        lbl_id.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lbl_id.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_id.setText("1246991");
 
-        btn_forgot_pas.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btn_forgot_pas.setForeground(new java.awt.Color(255, 255, 255));
-        btn_forgot_pas.setText("Forgot Password?");
-        btn_forgot_pas.setBorder(null);
-        btn_forgot_pas.setContentAreaFilled(false);
-        btn_forgot_pas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lbl_batch_id.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lbl_batch_id.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_batch_id.setText("J2EE/CCSL-");
 
-        lbl_login_msgs.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lbl_login_msgs.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_login_msgs.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        lbl_round.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lbl_round.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_round.setText("39");
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(lbl_loglin, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lbl_login_msgs, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jSeparator1)
-                .addContainerGap())
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                        .addComponent(txtFild_email, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtFild_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(32, 32, 32))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btn_create_acc)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_forgot_pas)
-                .addContainerGap())
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(129, 129, 129)
-                .addComponent(btn_login, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        javax.swing.GroupLayout pnl_createAccountLayout = new javax.swing.GroupLayout(pnl_createAccount);
+        pnl_createAccount.setLayout(pnl_createAccountLayout);
+        pnl_createAccountLayout.setHorizontalGroup(
+            pnl_createAccountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_createAccountLayout.createSequentialGroup()
+                .addGroup(pnl_createAccountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnl_createAccountLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(lbl_create_acc, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnl_createAccountLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addGroup(pnl_createAccountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel11))
+                        .addGap(113, 113, 113)
+                        .addGroup(pnl_createAccountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lbl_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lbl_email, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
+                            .addComponent(lbl_id, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lbl_batch_id, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lbl_round, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(pnl_createAccountLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnl_createAccountLayout.createSequentialGroup()
+                        .addGap(173, 173, 173)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lbl_loglin, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_login_msgs, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtFild_email)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        pnl_createAccountLayout.setVerticalGroup(
+            pnl_createAccountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_createAccountLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lbl_create_acc, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtFild_pass))
-                .addGap(26, 26, 26)
-                .addComponent(btn_login, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_create_acc)
-                    .addComponent(btn_forgot_pas))
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addGroup(pnl_createAccountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel5)
+                    .addGroup(pnl_createAccountLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(lbl_name, javax.swing.GroupLayout.DEFAULT_SIZE, 21, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnl_createAccountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(lbl_email, javax.swing.GroupLayout.DEFAULT_SIZE, 21, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(pnl_createAccountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(lbl_id, javax.swing.GroupLayout.DEFAULT_SIZE, 21, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(pnl_createAccountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(lbl_batch_id, javax.swing.GroupLayout.DEFAULT_SIZE, 21, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(pnl_createAccountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(lbl_round, javax.swing.GroupLayout.DEFAULT_SIZE, 21, Short.MAX_VALUE))
+                .addGap(72, 72, 72)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(153, 153, 153))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -210,16 +243,16 @@ public class StudentInfo extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(336, 336, 336)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(361, Short.MAX_VALUE))
+                .addGap(278, 278, 278)
+                .addComponent(pnl_createAccount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(262, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(164, Short.MAX_VALUE))
+                .addGap(39, 39, 39)
+                .addComponent(pnl_createAccount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1070, 590));
@@ -227,39 +260,12 @@ public class StudentInfo extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_create_accActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_create_accActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        new CreateAccount().setVisible(true);
+        new LoginPage().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_btn_create_accActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
-        // TODO add your handling code here:
-        if(isLogInSuccess()){
-            lbl_login_msgs.setText("Log in success!!");
-            txtFild_email.setText("");
-            txtFild_pass.setText("");
-        }else{
-            lbl_login_msgs.setText("Log in failed!!");
-            txtFild_email.setText("");
-            txtFild_pass.setText("");
-        }
-    }//GEN-LAST:event_btn_loginActionPerformed
-    
-    private boolean isLogInSuccess(){
-        String email = "abc@gmail.com";
-        String pass = "abc123";
-        String inpEmail = txtFild_email.getText();
-        char[] inpPass = txtFild_pass.getPassword();
-        String inpPassword = "";
-        for(char c:inpPass){
-            inpPassword += c;
-        }
-        if(email.equals(inpEmail) || pass.equals(inpPassword)){
-            return true;
-        }
-        return false;
-    }
     /**
      * @param args the command line arguments
      */
@@ -287,6 +293,8 @@ public class StudentInfo extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -297,21 +305,25 @@ public class StudentInfo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_create_acc;
-    private javax.swing.JButton btn_forgot_pas;
-    private javax.swing.JButton btn_login;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel lbl_login_msgs;
-    private javax.swing.JLabel lbl_loglin;
-    private javax.swing.JTextField txtFild_email;
-    private javax.swing.JPasswordField txtFild_pass;
+    private javax.swing.JLabel lbl_batch_id;
+    private javax.swing.JLabel lbl_create_acc;
+    private javax.swing.JLabel lbl_email;
+    private javax.swing.JLabel lbl_id;
+    private javax.swing.JLabel lbl_name;
+    private javax.swing.JLabel lbl_round;
+    private javax.swing.JPanel pnl_createAccount;
     // End of variables declaration//GEN-END:variables
 }
